@@ -1,10 +1,10 @@
-package exercise825;
+package truong.exercise1000.e825.model;
 
-public class Oxy {
+public class Point {
 	private double x;
 	private double y;
 
-	public Oxy(double x, double y) {
+	public Point(double x, double y) {
 		this.x = x;
 		this.y = y;
 	}
@@ -24,5 +24,4 @@ public class Oxy {
 	public void setY(double y) {
 		this.y = y;
 	}
-
 }
