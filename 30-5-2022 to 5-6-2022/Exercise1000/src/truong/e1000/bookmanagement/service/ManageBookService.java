@@ -8,7 +8,7 @@
 //d. Tìm một năm có nhiều sách xuất bản nhất và liệt kê tất cả các quyển
 //sách xuất bản trong năm đó.
 
-package truong.e1000.managebook.service;
+package truong.e1000.bookmanagement.service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,25 +16,25 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import truong.e1000.managebook.data.DataTestingBuilder;
-import truong.e1000.managebook.model.Book;
+import truong.e1000.bookmanagement.data.DataTestingBuilder;
+import truong.e1000.bookmanagement.model.Book;
 
 public class ManageBookService {
     long getOldestPublicationYear (List<Book> bookList) {
-        sortByPublicationYear(bookList, 0, bookList.size() - 1);
-        printBookList(bookList);
+        sortByPublicationYear(bookList, 0, bookList.size() - 1);        
         return bookList.get(0).getPublicationYear();
     }
     
     public List<Book> getListOldestPublicationYearBook () {
         List<Book> bookList = DataTestingBuilder.getBookList();
         long oldestPublicationYear = getOldestPublicationYear(bookList);
-        List<Book> result = getListBookByPublicationYear(bookList, oldestPublicationYear);
+        List<Book> result = getListBookByPublicationYear(oldestPublicationYear);
        
         return result;
     }
     
-    public List<Book> getListBookByPublicationYear (List<Book> bookList, long publicationYear) {
+    public List<Book> getListBookByPublicationYear (long publicationYear) {
+        List<Book> bookList = DataTestingBuilder.getBookList();
         List<Book> result = new ArrayList<>();
         
         for (Book book : bookList) {
@@ -68,6 +68,11 @@ public class ManageBookService {
         for (Map.Entry<Long, Integer> entry : bookCount.entrySet()) {
             if (entry.getValue() > max) {
                 max = entry.getValue();
+            }
+        }
+        
+        for (Map.Entry<Long, Integer> entry : bookCount.entrySet()) {
+            if (entry.getValue() == max) {
                 rs.add(entry.getKey());
             }
         }
@@ -76,8 +81,9 @@ public class ManageBookService {
     }
         
     public void printBookList (List<Book> bookList) {
+        System.out.println("\nList of Book");
         for (Book book : bookList) {
-            System.out.println("=============================");
+            System.out.println("------------------------------------------------");
             System.out.println(String.format("Book Name: %s", book.getBookName()));
             System.out.println(String.format("Author Name: %s", book.getAuthorName()));
             System.out.println(String.format("Publication Year: %d", book.getPublicationYear()));

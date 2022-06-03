@@ -1,9 +1,9 @@
-package truong.e1000.managebook.data;
+package truong.e1000.bookmanagement.data;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import truong.e1000.managebook.model.Book;
+import truong.e1000.bookmanagement.model.Book;
 
 public class DataTestingBuilder {
     public static List<Book> getBookList() {

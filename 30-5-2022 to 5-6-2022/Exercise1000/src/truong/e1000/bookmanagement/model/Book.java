@@ -1,4 +1,4 @@
-package truong.e1000.managebook.model;
+package truong.e1000.bookmanagement.model;
 //Viết chương trình thực hiện các yêu cầu sau:
 //a. Khai báo cấu trúc dữ liệu của một danh sách liên kết đơn các quyển
 //sách. Biết rằng thông tin của một quyển sách bao gồm: tên sách (50
