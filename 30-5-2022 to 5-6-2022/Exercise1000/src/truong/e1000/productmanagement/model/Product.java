@@ -3,24 +3,24 @@
 //hàng (MATHANG). Biết rằng một mặt hàng gồm những thành
 //phần như sau:
 //- Tên mặt hàng: chuỗi tối đa 20 ký tự.
-//- �?ơn giá: kiểu số nguyên 4 byte.
+//- �?ơn giá: kiểu số nguyên 4 byte.
 //- Số lượng tồn: kiểu số nguyên 4 byte.
 //b. Nhập danh sách.
 //c. Xuất danh sách.
 //d. Tìm mặt hàng có tổng giá trị tồn là lớn nhất.
-//e. �?ếm số lượng mặt hàng có số lượng tồn lớn hơn 1.000
+//e. �?ếm số lượng mặt hàng có số lượng tồn lớn hơn 1.000
 
 package truong.e1000.productmanagement.model;
 
 public class Product {
 	private String productName;
 	private double unitPrice;
-	private int amount;
+	private int quantity;
 	
-	public Product (String productName, double unitPrice, int amount) {
+	public Product (String productName, double unitPrice, int quantity) {
 		this.productName = productName;
 		this.unitPrice = unitPrice;
-		this.amount = amount;
+		this.setQuantity(quantity);
 	}
 	
 	public String getProductName() {
@@ -35,10 +35,11 @@ public class Product {
 	public void setUnitPrice(double unitPrice) {
 		this.unitPrice = unitPrice;
 	}
-	public int getAmount() {
-		return amount;
+	public int getQuantity() {
+		return quantity;
 	}
-	public void setAmount(int amount) {
-		this.amount = amount;
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 }
