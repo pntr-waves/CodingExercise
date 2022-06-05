@@ -56,11 +56,11 @@ public class TicketManagementService {
 			sortListByShowDateTime(ticketList, left, mid);
 			sortListByShowDateTime(ticketList, mid + 1, right);
 			
-			merge(ticketList, left, mid, right);
+			mergeByShowDateTime(ticketList, left, mid, right);
 		}
 	}
 
-	private void merge(List<Ticket> ticketList, int left, int mid, int right) {
+	private void mergeByShowDateTime(List<Ticket> ticketList, int left, int mid, int right) {
 		int n1 = mid - left + 1;
 		int n2 = right - mid;
 		
