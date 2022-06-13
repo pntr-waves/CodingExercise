@@ -14,13 +14,13 @@ package truong.e1000.productmanagement;
 import truong.e1000.productmanagement.service.ProductManagementService;
 
 public class Main {
-	public static void main(String[] args) {
-		ProductManagementService service = new ProductManagementService();
-		System.out.println("1. List of Product has the biggest amount");
-		System.out.println("===================================================");
-		service.printProductList(service.getBiggestQuantityProductList());
-		
-		System.out.println("\n2. The number of product has quantity greater than 1000");
-		System.out.println("===================================================");
-	}
+    public static void main(String[] args) {
+        ProductManagementService service = new ProductManagementService();
+        System.out.println("1. List of Product has the biggest amount");
+        System.out.println("===================================================");
+        service.printProductList(service.getBiggestQuantityProductList());
+
+        System.out.println("\n2. The number of product has quantity greater than 1000");
+        System.out.println("===================================================");
+    }
 }

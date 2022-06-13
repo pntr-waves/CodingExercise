@@ -17,12 +17,12 @@ package truong.e1000.ticketmanagement;
 import truong.e1000.ticketmanagement.service.TicketManagementService;
 
 public class Main {
-	public static void main(String[] args) {
-		TicketManagementService service = new TicketManagementService();
-		System.out.println("1.Total price of ticket list: " + service.getTotalPriceofListTicket());
-		System.out.println("===========================================================");
-		
-		System.out.println("\n2. Arrange ticket list by show time/date with ascending order: ");
-		service.printTicketList(service.sortListByShowDateTime());
-	}
+    public static void main(String[] args) {
+        TicketManagementService service = new TicketManagementService();
+        System.out.println("1.Total price of ticket list: " + service.getTotalPriceofListTicket());
+        System.out.println("===========================================================");
+
+        System.out.println("\n2. Arrange ticket list by show time/date with ascending order: ");
+        service.printTicketList(service.sortListByShowDateTime());
+    }
 }
