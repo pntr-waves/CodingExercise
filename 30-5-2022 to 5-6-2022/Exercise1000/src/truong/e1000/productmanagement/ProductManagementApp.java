@@ -13,7 +13,7 @@ package truong.e1000.productmanagement;
 
 import truong.e1000.productmanagement.service.ProductManagementService;
 
-public class Main {
+public class ProductManagementApp {
     public static void main(String[] args) {
         ProductManagementService service = new ProductManagementService();
         System.out.println("1. List of Product has the biggest amount");

@@ -14,7 +14,7 @@ package truong.e1000.provincemanagement;
 
 import truong.e1000.provincemanagement.service.ProvinceManageService;
 
-public class Main {
+public class ProvinceManagementApp {
     public static void main(String[] args) {
         ProvinceManageService service = new ProvinceManageService();
         System.out.println("1. Total Area: " + service.getTotalArea());

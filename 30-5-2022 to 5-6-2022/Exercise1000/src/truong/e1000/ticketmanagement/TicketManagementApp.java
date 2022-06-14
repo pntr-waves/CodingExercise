@@ -16,7 +16,7 @@ package truong.e1000.ticketmanagement;
 
 import truong.e1000.ticketmanagement.service.TicketManagementService;
 
-public class Main {
+public class TicketManagementApp {
     public static void main(String[] args) {
         TicketManagementService service = new TicketManagementService();
         System.out.println("1.Total price of ticket list: " + service.getTotalPriceofListTicket());

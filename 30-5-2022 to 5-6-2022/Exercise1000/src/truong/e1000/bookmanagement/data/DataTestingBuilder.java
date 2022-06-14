@@ -14,7 +14,9 @@ public class DataTestingBuilder {
         bookList.add(new Book("Bos mutus", "OCTINOXATE", 2011));
         bookList.add(new Book("Ciconia episcopus", "Alteplase", 1993));
         bookList.add(new Book("Kobus leche robertsi", "TRICLOSAN", 1995));
-        bookList.add(new Book("Boa caninus", "Antimon. crud., Apis mel., Arsenicum alb., Berber. vulg., Bovista, Bryonia, Cantharis, Chelidonium majus, Croton, Dulcamara, Graphites, Histaminum hydrochloricum, Lycopodium, Mezereum, Nux vom., Petroleum, Pulex irritans, Pulsatilla, Rhus toxicodendron, Sarsaparilla, Sulphur, Echinacea, Rumex crisp., Taraxacum, Urtica ur.", 2000));
+        bookList.add(new Book("Boa caninus",
+                "Antimon. crud., Apis mel., Arsenicum alb., Berber. vulg., Bovista, Bryonia, Cantharis, Chelidonium majus, Croton, Dulcamara, Graphites, Histaminum hydrochloricum, Lycopodium, Mezereum, Nux vom., Petroleum, Pulex irritans, Pulsatilla, Rhus toxicodendron, Sarsaparilla, Sulphur, Echinacea, Rumex crisp., Taraxacum, Urtica ur.",
+                2000));
         bookList.add(new Book("Psophia viridis", "AMOXICILLIN", 2001));
         bookList.add(new Book("Pseudalopex gymnocercus", "Dicyclomine Hydrochloride", 1998));
         bookList.add(new Book("Gyps fulvus", "OXYMETAZOLINE HYDROCHLORIDE", 2012));
@@ -25,7 +27,8 @@ public class DataTestingBuilder {
         bookList.add(new Book("Canis latrans", "lamivudine", 2001));
         bookList.add(new Book("Felis libyca", "Menthol", 2004));
         bookList.add(new Book("Sciurus vulgaris", "amlodipine besylate and atorvastatin calcium", 2001));
-        bookList.add(new Book("Butorides striatus", "Belladonna, Phosphorus, Pulsatilla, Calcarea carbonica, Silicea,", 2002));
+        bookList.add(new Book("Butorides striatus", "Belladonna, Phosphorus, Pulsatilla, Calcarea carbonica, Silicea,",
+                2002));
         bookList.add(new Book("Grus antigone", "Acetaminophen", 2009));
         bookList.add(new Book("Pseudocheirus peregrinus", "Lovastatin", 2003));
         bookList.add(new Book("Genetta genetta", "Clindamycin Hydrochloride", 1999));
@@ -40,8 +43,11 @@ public class DataTestingBuilder {
         bookList.add(new Book("Lasiorhinus latifrons", "NOT APPLICABLE", 2000));
         bookList.add(new Book("Cebus nigrivittatus", "dutasteride", 1996));
         bookList.add(new Book("Lama guanicoe", "nifedipine", 2006));
-        bookList.add(new Book("Dicrurus adsimilis", "Acetaminophen, Dextromethorphan Hydrobromide, Phenylephrine Hydrochloride", 1996));
-        bookList.add(new Book("Lorythaixoides concolor", "Dextrose, Sodium Chloride, Sodium Acetate Anhydrous, Sodium Gluconate, Potassium Chloride, and Magnesium Chloride", 1995));
+        bookList.add(new Book("Dicrurus adsimilis",
+                "Acetaminophen, Dextromethorphan Hydrobromide, Phenylephrine Hydrochloride", 1996));
+        bookList.add(new Book("Lorythaixoides concolor",
+                "Dextrose, Sodium Chloride, Sodium Acetate Anhydrous, Sodium Gluconate, Potassium Chloride, and Magnesium Chloride",
+                1995));
         bookList.add(new Book("Vulpes cinereoargenteus", "Warfarin Sodium", 1996));
         bookList.add(new Book("Amazona sp.", "Guaifenesin", 2005));
         bookList.add(new Book("Eolophus roseicapillus", "nisoldipine", 2010));
@@ -51,14 +57,18 @@ public class DataTestingBuilder {
         bookList.add(new Book("Pseudoleistes virescens", "Titanium Dioxide, Octinoxate, Octocrylene", 2004));
         bookList.add(new Book("Macropus eugenii", "Rhizopus oryzae", 2012));
         bookList.add(new Book("Varanus salvator", "Fosphenytoin Sodium", 1996));
-        bookList.add(new Book("Vulpes vulpes", "Baptisia Tinctoria, Echinacea, Lomatium Dissectum, Tabebuia Impetiginosa, Propolis, Spleen, Thymus, Thyroidinum", 2005));
+        bookList.add(new Book("Vulpes vulpes",
+                "Baptisia Tinctoria, Echinacea, Lomatium Dissectum, Tabebuia Impetiginosa, Propolis, Spleen, Thymus, Thyroidinum",
+                2005));
         bookList.add(new Book("Phoeniconaias minor", "Clarithromycin", 2012));
         bookList.add(new Book("Ictonyx striatus", "Zolmitriptan", 1990));
-        bookList.add(new Book("Zalophus californicus", "Anticoagulant Citrate Phosphate Dextrose (CPD) Solution and ADSOL Preservation Solution", 2003));
+        bookList.add(new Book("Zalophus californicus",
+                "Anticoagulant Citrate Phosphate Dextrose (CPD) Solution and ADSOL Preservation Solution", 2003));
         bookList.add(new Book("Phascogale tapoatafa", "glycerin, hypromellose, polyethylene glycol 400", 2012));
         bookList.add(new Book("Chelodina longicollis", "Montelukast Sodium", 2009));
         bookList.add(new Book("Callorhinus ursinus", "Norethindrone and Ethinyl Estradiol", 1997));
-        bookList.add(new Book("Notechis semmiannulatus", "bacitracin zinc, neomycin sulfate, polymyxin b sulfate", 1998));
+        bookList.add(
+                new Book("Notechis semmiannulatus", "bacitracin zinc, neomycin sulfate, polymyxin b sulfate", 1998));
         bookList.add(new Book("Macropus parryi", "Cattle Epithelium", 2007));
         bookList.add(new Book("Paraxerus cepapi", "Naproxen Sodium Tablet, coated", 1987));
         bookList.add(new Book("Dicrostonyx groenlandicus", "Bacitracin Zinc", 2001));

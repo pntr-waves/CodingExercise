@@ -13,7 +13,7 @@ import java.util.List;
 
 import truong.e1000.bookmanagement.service.ManageBookService;
 
-public class Main  {
+public class BookManagementApp  {
     public static void main(String[] args) {
         ManageBookService service = new ManageBookService();
         System.out.println("1. Oldest Publication Year Book:");
