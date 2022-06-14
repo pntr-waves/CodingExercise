@@ -1,16 +1,13 @@
-//832. Viết chương trình thực hiện các yêu cầu sau:
-//a. Khai báo cấu trúc dữ liệu của một danh sách liên kết đơn các
-//chuyến bay. Biết rằng một chuyến bay gồm những thành phần như
-//sau:
-//- Mã chuyến bay: chuỗi tối đa 5 ký tự.
-//- Ngày bay: kiểu dữ liệu ngày.
-//- Giờ bay: kiểu thời gian.
-//- Nơi đi: chuỗi tối đa 20 ký tự.
-//- Nơi đến: chuỗi tối đa 20 ký tự.
-//b. Nhập danh sách.
-//c. Xuất danh sách.
-//d. Tìm một ngày có nhiều chuyến bay nhất.
-//e. Tìm một chuyến bay trong danh sách theo mã chuyến bay.
+/*832. Write a program to with following:
+ * a. Create Flight object with: 
+ * - Flight code: String type
+ * - Flight date: datetime type
+ * - Flight time: datetime type
+ * - To: String type
+ * - From: String type
+ * b. Find a day has the most flight
+ * c. Find a flight by flight code 
+ */
 package truong.e1000.flightmanagement;
 
 import java.util.Scanner;

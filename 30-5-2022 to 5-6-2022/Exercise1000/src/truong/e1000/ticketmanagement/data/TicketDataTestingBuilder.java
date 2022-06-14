@@ -1,16 +1,13 @@
-//830. Viết chương trình thực hiện các yêu cầu sau:
-//a. Khai báo cấu trúc dữ liệu của một danh sách liên kết dơn các vé
-//xem phim (VE). Biết rằng một vé xem phim gồm những thành phần
-//như sau:
-//- Tên phim: chuỗi tối đa 20 ký tự.
-//- Giá tiền: kiểu số nguyên 4 byte.
-//- Xuất chiếu: kiểu thời gian (THOIGIAN).
-//- Ngày xem: kiểu dữ liệu ngày (NGAY).
-//b. Nhập danh sách.
-//c. Xuất danh sách.
-//d. Tính tổng giá tiền của tất cả các vé trong danh sách.
-//e. Sắp xếp các phần tử trong mảng tăng dần theo ngày xem và xuất
-//chiếu.
+/*830: Write the program to:
+ * a. Create class Ticket with: 
+ * - Film Name (String)
+ * - Price (real number type)
+ * - Show time (datetime type)
+ * - Date time (datetime type)
+ * b. Calculate total price of tickets in list
+ * c. Arrange a list by show time and date time with ascending order
+ * */
+
 package truong.e1000.ticketmanagement.data;
 
 import java.util.ArrayList;

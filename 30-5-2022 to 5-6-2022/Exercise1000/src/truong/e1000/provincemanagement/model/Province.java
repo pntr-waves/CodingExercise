@@ -1,14 +1,12 @@
-//829.Viết chương trình thực hiện các yêu cầu sau:
-//a. Khai báo cấu trúc dữ liệu của một danh sách liên kết đơn các tỉnh.
-//Biết rằng thông tin của một tỉnh bao gồm: tên tỉnh (tối đa 30 ký tự),
-//diện tích (kiểu số thực), dân số (số nguyên dài).
-//b. Cài đặt tất cả các thao tác cơ bản cho danh sách liên kết đơn các
-//tỉnh.
-//c. Tính tổng diện tích của tất cả các tính trong dslk.
-//d. Tìm địa chỉ của node chứa tỉnh có diện tích lớn nhất trong danh
-//sách.
-//e. Tìm một tỉnh có dân số lớn nhất trong dslk đơn.
-//f. Sắp xếp danh sách tăng dần theo diện tích.
+/* 839. Write a program to the following:
+ * a. Create Province object with: 
+ * - Province Name: String type
+ * - Area:  real number type
+ * - Population: integer type
+ * b. Calculation total area of provinces in list.
+ * c. Find a province has the greatest area.
+ * d. Sort a list with ascending order by area.
+ * */
 
 package truong.e1000.provincemanagement.model;
 

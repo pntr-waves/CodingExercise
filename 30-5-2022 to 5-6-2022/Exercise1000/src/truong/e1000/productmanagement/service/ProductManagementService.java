@@ -1,14 +1,11 @@
-//831. Viết chương trình thực hiện các yêu cầu sau:
-//a. Khai báo cấu trúc dữ liệu của một danh sách liên kết đơn các mặt
-//hàng (MATHANG). Biết rằng một mặt hàng gồm những thành
-//phần như sau:
-//- Tên mặt hàng: chuỗi tối đa 20 ký tự.
-//- Đơn giá: kiểu số nguyên 4 byte.
-//- Số lượng tồn: kiểu số nguyên 4 byte.
-//b. Nhập danh sách.
-//c. Xuất danh sách.
-//d. Tìm mặt hàng có tổng giá trị tồn là lớn nhất.
-//e. Đếm số lượng mặt hàng có số lượng tồn lớn hơn 1.000
+/*831. Write a program to the following: 
+ * a. Create Product object with: 
+ * - Product name: String type
+ * - Unit price: real number type
+ * - Quantity: integer type
+ * b. Find a Product has the highest quantity price
+ * c. Count Product has quantity greater than 1000 in list
+ */
 
 package truong.e1000.productmanagement.service;
 

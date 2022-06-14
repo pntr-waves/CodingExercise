@@ -1,12 +1,11 @@
-//Viết chương trình thực hiện các yêu cầu sau:
-//a. Khai báo cấu trúc dữ liệu của một danh sách liên kết đơn các quyển
-//sách. Biết rằng thông tin của một quyển sách bao gồm: tên sách (50
-//ký tự), tên tác giả (30 ký tự) và năm xuất bản.
-//b. Cài đặt tất cả các thao tác cơ bản cho danh sách liên kết các quyển
-//sách.
-//c. Tìm quyển sách cũ nhất trong danh sách liên kết.
-//d. Tìm một năm có nhiều sách xuất bản nhất và liệt kê tất cả các quyển
-//sách xuất bản trong năm đó.
+/*828: Write a program with a following:
+ * a. Declare a object presents for book with: 
+ * - Book name: String type
+ * - Author name: String type
+ * - Publication Year: Integer type
+ * b. Find an oldest book
+ * c. Find years have the most published book and show all book was published in this year
+ */
 
 package truong.e1000.bookmanagement.service;
 
