@@ -64,17 +64,4 @@ public class EssayManagementService {
         
         return result;
     }
-    
-    public void printEssayList (List<Essay> essayList) {
-        System.out.println("Essay List: ");
-        
-        for (Essay essay : essayList) {
-            System.out.println("--------------------------------------------------");
-            System.out.println("Code: " + essay.getCode());
-            System.out.println("Essay Name: " + essay.getEssayName());
-            System.out.println("Student: " + essay.getStudentName());
-            System.out.println("Teacher: " + essay.getTeacherName());
-            System.out.println("Year: " + essay.getYear() );
-        }
-    }
 }

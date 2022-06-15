@@ -1,13 +1,3 @@
-/*833. Viết chương trình thực hiện các yêu cầu sau:
-a. Khai báo cấu trúc dữ liệu của một danh sách liên kết đơn các cầu
-thủ. Biết rằng một cầu thủ gồm những thành phần như sau:
-- Mã cầu thủ: chuỗi tối đa 10 ký tự.
-- Tên cầu thủ: chuỗi tối đa 30 ký tự.
-- Ngày sinh: kiểu dữ liệu ngày.
-b. Nhập danh sách.
-c. Xuất danh sách.
-d. Liệt kê danh sách các cầu thủ nhỏ tuổi nhất trong danh sách.
-e. Sắp xếp các cầu thủ giảm dần theo ngày sinh*/
 package truong.e1000.playermanagement.service;
 
 import java.time.LocalDate;
@@ -21,7 +11,7 @@ import truong.e1000.playermanagement.model.Player;
 public class PlayerManagementService {
     
     int getYoungestAge (List<Player> playerList) {
-        sortPlayerListByAge(playerList);
+    	sortByAge(playerList);
         return getPlayerAge(playerList.get(0).getBirthDay());
     }
     
@@ -40,24 +30,12 @@ public class PlayerManagementService {
         return result;
     }
     
-    public List<Player> sortPlayerListByBirthDay() {
+    public List<Player> sortByBirthDay() {
         List<Player> playerList = PlayerDataTestingBuilder.getPlayerList();
-        sortPlayerListByBirthDay(playerList);
-        return playerList;
+        return sortByBirthDay(playerList);
     }
     
-    public void printPlayerList (List<Player> playerList) {
-        System.out.println("Player List: ");
-        for (Player player : playerList) {
-            System.out.println("--------------------------------------------------");
-            System.out.println("Player Code: " + player.getPlayerCode());
-            System.out.println("Player Name: " + player.getPlayerName());
-            System.out.println("Birthday: " + player.getBirthDay());
-            System.out.println("Age:" + getPlayerAge(player.getBirthDay()));
-        }
-    }
-    
-    void sortPlayerListByAge (List<Player> playerList) {
+    void sortByAge (List<Player> playerList) {
         int length = playerList.size();
         
         for (int i = length / 2 - 1; i >= 0; i--) {
@@ -93,7 +71,7 @@ public class PlayerManagementService {
         }
     }
 
-    void sortPlayerListByBirthDay(List<Player> playerList) {
+    List<Player> sortByBirthDay(List<Player> playerList) {
         int length = playerList.size();
 
         for (int i = length / 2 - 1; i >= 0; i--) {
@@ -106,6 +84,8 @@ public class PlayerManagementService {
             playerList.set(i, temp);
             heapifyByBirthDay(playerList, i, 0);
         }
+        
+        return playerList;
     }
 
     void heapifyByBirthDay(List<Player> playerList, int length, int index) {

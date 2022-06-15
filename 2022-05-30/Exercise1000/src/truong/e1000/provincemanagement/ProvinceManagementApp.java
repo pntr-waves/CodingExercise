@@ -30,6 +30,6 @@ public class ProvinceManagementApp {
         
         System.out.println("\n4. Sort list of province by area with ascending");
         System.out.println("==========================================");
-        display.printProvinceList(service.sortProvinceByArea());
+        display.printProvinceList(service.sortByArea());
     }
 }

@@ -20,6 +20,6 @@ public class TicketManagementApp {
         System.out.println("===========================================================");
 
         System.out.println("\n2. Arrange ticket list by show time/date with ascending order: ");
-        display.printTicketList(service.sortListByShowDateTime());
+        display.printTicketList(service.sortByShowDateTime());
     }
 }

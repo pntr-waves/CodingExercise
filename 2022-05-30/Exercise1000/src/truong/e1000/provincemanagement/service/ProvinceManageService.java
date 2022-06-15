@@ -19,7 +19,7 @@ public class ProvinceManageService {
 
     public List<Province> getGreatestAreaProvinceList() {
         List<Province> provinceList = ProvinceTestingBuilder.getProvinceList();
-        sortProvinceByArea(provinceList, 0, provinceList.size() - 1);
+        sortByArea(provinceList, 0, provinceList.size() - 1);
 
         double greatestArea = provinceList.get(provinceList.size() - 1).getArea();
 
@@ -35,7 +35,7 @@ public class ProvinceManageService {
 
     public List<Province> getGreatestPopulationProvinceList() {
         List<Province> provinceList = ProvinceTestingBuilder.getProvinceList();
-        sortProvinceByPopulation(provinceList, 0, provinceList.size() - 1);
+        sortByPopulation(provinceList, 0, provinceList.size() - 1);
 
         long greatestPopulation = provinceList.get(provinceList.size() - 1).getPopulation();
 
@@ -49,12 +49,12 @@ public class ProvinceManageService {
         return rs;
     }
 
-    void sortProvinceByPopulation(List<Province> provinceList, int left, int right) {
+    void sortByPopulation(List<Province> provinceList, int left, int right) {
         if (left < right) {
             int mid = (left + right) / 2;
 
-            sortProvinceByPopulation(provinceList, left, mid);
-            sortProvinceByPopulation(provinceList, mid + 1, right);
+            sortByPopulation(provinceList, left, mid);
+            sortByPopulation(provinceList, mid + 1, right);
 
             mergeByPopulation(provinceList, left, mid, right);
         }
@@ -103,22 +103,22 @@ public class ProvinceManageService {
         }
     }
 
-    public List<Province> sortProvinceByArea() {
+    public List<Province> sortByArea() {
         List<Province> provinceList = ProvinceTestingBuilder.getProvinceList();
-        sortProvinceByArea(provinceList, 0, provinceList.size() - 1);
-
-        return provinceList;
+        return sortByArea(provinceList, 0, provinceList.size() - 1);
     }
 
-    void sortProvinceByArea(List<Province> provinceList, int left, int right) {
+    List<Province> sortByArea(List<Province> provinceList, int left, int right) {
         if (left < right) {
             int mid = (left + right) / 2;
 
-            sortProvinceByArea(provinceList, left, mid);
-            sortProvinceByArea(provinceList, mid + 1, right);
+            sortByArea(provinceList, left, mid);
+            sortByArea(provinceList, mid + 1, right);
 
             mergeByArea(provinceList, left, mid, right);
         }
+        
+        return provinceList;
     }
 
     void mergeByArea(List<Province> provinceList, int left, int mid, int right) {

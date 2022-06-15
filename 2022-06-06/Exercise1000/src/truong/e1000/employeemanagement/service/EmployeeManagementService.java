@@ -1,15 +1,3 @@
-/*834. Viết chương trình thực hiện các yêu cầu sau:
-a. Khai báo cấu trúc dữ liệu của một danh sách liên kết đơn các nhân
-viên (NHANVIEN). Biết rằng một nhân viên gồm những thành
-phần như sau:
-- Mã nhân viên: chuỗi tối đa 5 ký tự.
-- Tên nhân viên: chuỗi tối đa 30 ký tự.
-- Lương nhân viên: kiểu số thực.
-b. Nhập danh sách.
-c. Xuất danh sách.
-d. Tìm một nhân viên có lương cao nhất trong danh sách.
-e. Tính tổng lương của các nhân viên.
-f. Sắp xếp danh sách tăng dần theo lương nhân viên.*/
 package truong.e1000.employeemanagement.service;
 
 import java.util.ArrayList;
@@ -19,16 +7,6 @@ import truong.e1000.employeemanagement.data.EmployeeDataTestingBuilder;
 import truong.e1000.employeemanagement.model.Employee;
 
 public class EmployeeManagementService {
-    
-    public void printEmployeeList (List<Employee> employeeList) {
-        System.out.println("List of Employee");
-        for (Employee employee : employeeList) {
-            System.out.println("-------------------------------------------------------");
-            System.out.println("Employee Code: " + employee.getEmployeeCode());
-            System.out.println("Employee Name: " + employee.getEmployeeName());
-            System.out.println("Salary: " + employee.getSalary());
-        }
-    }
     
     public List<Employee> getGreatestSalaryEmployeeList () {
         List<Employee> employeeList = EmployeeDataTestingBuilder.getEmployeeList();
@@ -45,8 +23,7 @@ public class EmployeeManagementService {
     }
     
     double getGreatestSalary (List<Employee> employeeList) {
-        sortEmployeeListBySalary(employeeList);
-        return employeeList.get(employeeList.size() - 1).getSalary();
+        return sortBySalary(employeeList).get(employeeList.size() - 1).getSalary();
     }
     
     public int countEmployee () {
@@ -54,14 +31,13 @@ public class EmployeeManagementService {
         return employeeList.size();
     }
     
-    public List<Employee> sortEmployeeListBySalary () {
+    public List<Employee> sortBySalary () {
         List<Employee> employeeList = EmployeeDataTestingBuilder.getEmployeeList();
-        sortEmployeeListBySalary(employeeList);
+        return sortBySalary(employeeList);
         
-        return employeeList;
     }
     
-    void sortEmployeeListBySalary (List<Employee> employeeList) {
+    List<Employee> sortBySalary (List<Employee> employeeList) {
         int length = employeeList.size();
         
         for (int i = length / 2 - 1; i >= 0; i--) {
@@ -74,6 +50,8 @@ public class EmployeeManagementService {
             employeeList.set(i, temp);
             heapifyBySalary(employeeList, i, 0);
         }
+        
+        return employeeList;
     }
     
     void heapifyBySalary (List<Employee> employeeList, int length, int index) {

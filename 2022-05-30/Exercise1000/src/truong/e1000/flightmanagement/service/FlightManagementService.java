@@ -50,7 +50,7 @@ public class FlightManagementService {
 
     public Flight getFlightByFlightCode(String flightCode) {
         List<Flight> flightList = FlightDataTestingBuilder.getFlightList();
-        sortFlightListByFlightCode(flightList, 0, flightList.size() - 1);
+        sortByFlightCode(flightList, 0, flightList.size() - 1);
         return getFlightByFlightCode(flightList, flightCode, 0, flightList.size() - 1);
     }
 
@@ -71,11 +71,11 @@ public class FlightManagementService {
         return null;
     }
 
-    void sortFlightListByFlightCode(List<Flight> flightList, int left, int right) {
+    void sortByFlightCode(List<Flight> flightList, int left, int right) {
         if (left < right) {
             int mid = (left + right) / 2;
-            sortFlightListByFlightCode(flightList, left, mid);
-            sortFlightListByFlightCode(flightList, mid + 1, right);
+            sortByFlightCode(flightList, left, mid);
+            sortByFlightCode(flightList, mid + 1, right);
 
             mergeByFlightCode(flightList, left, mid, right);
         }

@@ -19,21 +19,22 @@ public class TicketManagementService {
         return totalPrice;
     }
 
-    public List<Ticket> sortListByShowDateTime() {
+    public List<Ticket> sortByShowDateTime() {
         List<Ticket> ticketList = TicketDataTestingBuilder.getTicketList();
-        sortListByShowDateTime(ticketList, 0, ticketList.size() - 1);
-        return ticketList;
+        return sortByShowDateTime(ticketList, 0, ticketList.size() - 1);
     }
 
-    void sortListByShowDateTime(List<Ticket> ticketList, int left, int right) {
+    List<Ticket> sortByShowDateTime(List<Ticket> ticketList, int left, int right) {
         if (left < right) {
             int mid = (left + right) / 2;
 
-            sortListByShowDateTime(ticketList, left, mid);
-            sortListByShowDateTime(ticketList, mid + 1, right);
+            sortByShowDateTime(ticketList, left, mid);
+            sortByShowDateTime(ticketList, mid + 1, right);
 
             mergeByShowDateTime(ticketList, left, mid, right);
         }
+        
+        return ticketList;
     }
 
     private void mergeByShowDateTime(List<Ticket> ticketList, int left, int mid, int right) {

@@ -1,19 +1,3 @@
-/*835. Viết chương trình thực hiện các yêu cầu sau:
-a. Khai báo cấu trúc dữ liệu của một danh sách liên kết đơn các thí
-sinh (THISINH). Biết rằng một thí sinh gồm những thành phần như
-sau:
-- Mã thí sinh: chuỗi tối đa 5 ký tự.
-- Họ tên thí sinh: chuỗi tối đa 30 ký tự.
-- Điểm toán: kiểu số thực.
-- Điểm lý: kiểu số thực.
-- Điểm hóa: kiểu số thực.
-- Điểm tổng cộng: kiểu số thực.
-b. Nhập danh sách.
-c. Xuất danh sách.
-d. Liệt kê các thí sinh thi đậu trong danh sách. Một thí sinh được gọi là
-đậu khi có tổng điểm 3 môn lớn hơn 15 và không có một nào bị
-điểm không.
-e. Sắp xếp danh sách theo thứ tự giảm dần theo điểm tổng cộng.*/
 package truong.e1000.candidatemanagement.service;
 
 import java.util.ArrayList;
@@ -44,19 +28,20 @@ public class CandidateManagementService {
         return result;
     }
     
-    public List<Candidate> sortCandidateListByTotalMark () {
+    public List<Candidate> sortByTotalMark () {
         List<Candidate> candidateList = CandidateDataTestingBuilder.getCandidateList();
-        sortCandidateListByTotalMark(candidateList, 0, candidateList.size() - 1);
-        return candidateList;
+        return sortByTotalMark(candidateList, 0, candidateList.size() - 1);
     }
     
-    void sortCandidateListByTotalMark (List<Candidate> candidateList, int low, int high) {
+    List<Candidate> sortByTotalMark (List<Candidate> candidateList, int low, int high) {
         if (low < high) {
             int pi = partition(candidateList, low, high);
             
-            sortCandidateListByTotalMark(candidateList, low, pi - 1);
-            sortCandidateListByTotalMark(candidateList, pi + 1, high);
+            sortByTotalMark(candidateList, low, pi - 1);
+            sortByTotalMark(candidateList, pi + 1, high);
         }
+        
+        return candidateList;
     }
     
     int partition (List<Candidate> candidateList, int low, int high) {
@@ -77,16 +62,4 @@ public class CandidateManagementService {
         return i + 1;
     }
     
-    public void printCandidateList (List<Candidate> candidateList) {
-        System.out.println("List of Candidate");
-        for (Candidate candidate : candidateList) {
-            System.out.println("---------------------------------------------------");
-            System.out.println("Candidate Code: " + candidate.getCode());
-            System.out.println("Full Name: " + candidate.getFullName());
-            System.out.println("Math: " + candidate.getMathMark());
-            System.out.println("Physic: " + candidate.getPhysicMark());
-            System.out.println("Chemistry: " + candidate.getChemistryMark());
-            System.out.println("Total: " + candidate.getTotalMark());
-        }
-    }
 }
