@@ -7,7 +7,6 @@
  * b. Calculate total price of tickets in list
  * c. Arrange a list by show time and date time with ascending order
  * */
-
 package truong.e1000.ticketmanagement;
 
 import truong.e1000.ticketmanagement.service.TicketManagementService;

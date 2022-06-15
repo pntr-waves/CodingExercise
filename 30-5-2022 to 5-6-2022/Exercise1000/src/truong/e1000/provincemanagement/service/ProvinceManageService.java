@@ -1,13 +1,3 @@
-/* 839. Write a program to the following:
- * a. Create Province object with: 
- * - Province Name: String type
- * - Area:  real number type
- * - Population: integer type
- * b. Calculation total area of provinces in list.
- * c. Find a province has the greatest area.
- * d. Sort a list with ascending order by area.
- * */
-
 package truong.e1000.provincemanagement.service;
 
 import java.util.ArrayList;

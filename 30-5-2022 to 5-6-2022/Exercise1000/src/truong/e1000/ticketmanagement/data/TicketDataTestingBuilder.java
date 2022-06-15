@@ -1,13 +1,3 @@
-/*830: Write the program to:
- * a. Create class Ticket with: 
- * - Film Name (String)
- * - Price (real number type)
- * - Show time (datetime type)
- * - Date time (datetime type)
- * b. Calculate total price of tickets in list
- * c. Arrange a list by show time and date time with ascending order
- * */
-
 package truong.e1000.ticketmanagement.data;
 
 import java.util.ArrayList;

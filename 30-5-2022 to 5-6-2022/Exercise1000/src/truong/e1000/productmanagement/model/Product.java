@@ -1,12 +1,3 @@
-/*831. Write a program to the following: 
- * a. Create Product object with: 
- * - Product name: String type
- * - Unit price: real number type
- * - Quantity: integer type
- * b. Find a Product has the highest quantity price
- * c. Count Product has quantity greater than 1000 in list
- */
-
 package truong.e1000.productmanagement.model;
 
 public class Product {

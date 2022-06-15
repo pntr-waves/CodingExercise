@@ -1,14 +1,3 @@
-/*832. Write a program to with following:
- * a. Create Flight object with: 
- * - Flight code: String type
- * - Flight date: datetime type
- * - Flight time: datetime type
- * - To: String type
- * - From: String type
- * b. Find a day has the most flight
- * c. Find a flight by flight code 
- */
-
 package truong.e1000.flightmanagement.service;
 
 import java.time.LocalDate;

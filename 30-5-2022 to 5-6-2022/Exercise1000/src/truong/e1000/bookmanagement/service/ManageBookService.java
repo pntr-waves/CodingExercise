@@ -1,12 +1,3 @@
-/*828: Write a program with a following:
- * a. Declare a object presents for book with: 
- * - Book name: String type
- * - Author name: String type
- * - Publication Year: Integer type
- * b. Find an oldest book
- * c. Find years have the most published book and show all book was published in this year
- */
-
 package truong.e1000.bookmanagement.service;
 
 import java.util.ArrayList;
