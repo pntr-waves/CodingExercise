@@ -49,16 +49,6 @@ public class ProvinceManageService {
         return rs;
     }
 
-    public void printProvinceList(List<Province> provinceList) {
-        System.out.println("\nList of Province");
-        for (Province province : provinceList) {
-            System.out.println("--------------------------------");
-            System.out.println("Province name: " + province.getProvinceName());
-            System.out.println("Area: " + province.getArea());
-            System.out.println("Population: " + province.getPopulation());
-        }
-    }
-
     void sortProvinceByPopulation(List<Province> provinceList, int left, int right) {
         if (left < right) {
             int mid = (left + right) / 2;
@@ -74,15 +64,15 @@ public class ProvinceManageService {
         int n1 = mid - left + 1;
         int n2 = right - mid;
 
-        List<Province> lArr = new ArrayList<>();
-        List<Province> rArr = new ArrayList<>();
+        List<Province> leftArr = new ArrayList<>();
+        List<Province> rightArr = new ArrayList<>();
 
         for (int i = 0; i < n1; i++) {
-            lArr.add(provinceList.get(i + left));
+            leftArr.add(provinceList.get(i + left));
         }
 
         for (int i = 0; i < n2; i++) {
-            rArr.add(provinceList.get(i + mid + 1));
+            rightArr.add(provinceList.get(i + mid + 1));
         }
 
         int i, j;
@@ -90,24 +80,24 @@ public class ProvinceManageService {
         int k = left;
 
         while (i < n1 && j < n2) {
-            if (lArr.get(i).getPopulation() < rArr.get(j).getPopulation()) {
-                provinceList.set(k, lArr.get(i));
+            if (leftArr.get(i).getPopulation() < rightArr.get(j).getPopulation()) {
+                provinceList.set(k, leftArr.get(i));
                 i++;
             } else {
-                provinceList.set(k, rArr.get(j));
+                provinceList.set(k, rightArr.get(j));
                 j++;
             }
             k++;
         }
 
         while (i < n1) {
-            provinceList.set(k, lArr.get(i));
+            provinceList.set(k, leftArr.get(i));
             i++;
             k++;
         }
 
         while (j < n2) {
-            provinceList.set(k, rArr.get(j));
+            provinceList.set(k, rightArr.get(j));
             j++;
             k++;
         }
@@ -135,15 +125,15 @@ public class ProvinceManageService {
         int n1 = mid - left + 1;
         int n2 = right - mid;
 
-        List<Province> lArr = new ArrayList<>();
-        List<Province> rArr = new ArrayList<>();
+        List<Province> leftArr = new ArrayList<>();
+        List<Province> rightArr = new ArrayList<>();
 
         for (int i = 0; i < n1; i++) {
-            lArr.add(provinceList.get(i + left));
+            leftArr.add(provinceList.get(i + left));
         }
 
         for (int i = 0; i < n2; i++) {
-            rArr.add(provinceList.get(mid + i + 1));
+            rightArr.add(provinceList.get(mid + i + 1));
         }
 
         int i, j;
@@ -151,24 +141,24 @@ public class ProvinceManageService {
         int k = left;
 
         while (i < n1 && j < n2) {
-            if (lArr.get(i).getArea() < rArr.get(j).getArea()) {
-                provinceList.set(k, lArr.get(i));
+            if (leftArr.get(i).getArea() < rightArr.get(j).getArea()) {
+                provinceList.set(k, leftArr.get(i));
                 i++;
             } else {
-                provinceList.set(k, rArr.get(j));
+                provinceList.set(k, rightArr.get(j));
                 j++;
             }
             k++;
         }
 
         while (i < n1) {
-            provinceList.set(k, lArr.get(i));
+            provinceList.set(k, leftArr.get(i));
             i++;
             k++;
         }
 
         while (j < n2) {
-            provinceList.set(k, rArr.get(j));
+            provinceList.set(k, rightArr.get(j));
             j++;
             k++;
         }

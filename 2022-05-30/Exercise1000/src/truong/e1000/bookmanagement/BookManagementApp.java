@@ -10,20 +10,22 @@ package truong.e1000.bookmanagement;
 
 import java.util.List;
 
+import truong.e1000.bookmanagement.service.ManageBookDisplayService;
 import truong.e1000.bookmanagement.service.ManageBookService;
 
 public class BookManagementApp  {
     public static void main(String[] args) {
         ManageBookService service = new ManageBookService();
+        ManageBookDisplayService display = new ManageBookDisplayService();
         System.out.println("1. Oldest Publication Year Book:");
         System.out.println("===================================");
-        service.printBookList(service.getListOldestPublicationYearBook());
+        display.printBookList(service.getListOldestPublicationYearBook());
         System.out.println("\n2. Find Publication Year with the most book published:");
         System.out.println("===================================");
         List<Long> yearList = service.getYearsWithMostBookPublished();
         for (long year : yearList) {
             System.out.println("Most published book in " + year);
-            service.printBookList(service.getListBookByPublicationYear(year));
+            display.printBookList(service.getListBookByPublicationYear(year));
         }
     }
     

@@ -11,28 +11,6 @@ import truong.e1000.flightmanagement.model.Flight;
 
 public class FlightManagementService {
 
-    public void printFlight(Flight flight) {
-        if (flight != null) {
-            System.out.println("\t-------------------------------------------------------");
-            System.out.println("\tFlight Code: " + flight.getFlightCode());
-            System.out.println("\tTime: " + flight.getFlightTime());
-            System.out.println("\tDate: " + flight.getFlightDate());
-            System.out.println("\tTo: " + flight.getTo());
-            System.out.println("\tFrom: " + flight.getFrom());
-        }
-    }
-
-    public void printFlightList(List<Flight> flightList) {
-        for (Flight flight : flightList) {
-            System.out.println("-------------------------------------------------------");
-            System.out.println("Flight Code: " + flight.getFlightCode());
-            System.out.println("Time: " + flight.getFlightTime());
-            System.out.println("Date: " + flight.getFlightDate());
-            System.out.println("To: " + flight.getTo());
-            System.out.println("From: " + flight.getFrom());
-        }
-    }
-
     Map<LocalDate, Integer> getCounterByFlightDate() {
         Map<LocalDate, Integer> counter = new HashMap<>();
         List<Flight> flightList = FlightDataTestingBuilder.getFlightList();
@@ -107,26 +85,26 @@ public class FlightManagementService {
         int n1 = mid - left + 1;
         int n2 = right - mid;
 
-        List<Flight> lArr = new ArrayList<>();
-        List<Flight> rArr = new ArrayList<>();
+        List<Flight> leftArr = new ArrayList<>();
+        List<Flight> rightArr = new ArrayList<>();
 
         for (int i = 0; i < n1; i++) {
-            lArr.add(flightList.get(i + left));
+            leftArr.add(flightList.get(i + left));
         }
 
         for (int i = 0; i < n2; i++) {
-            rArr.add(flightList.get(i + mid + 1));
+            rightArr.add(flightList.get(i + mid + 1));
         }
 
         int i = 0, j = 0;
         int k = left;
 
         while (i < n1 && j < n2) {
-            if (lArr.get(i).getFlightCode().compareTo(rArr.get(j).getFlightCode()) < 0) {
-                flightList.set(k, lArr.get(i));
+            if (leftArr.get(i).getFlightCode().compareTo(rightArr.get(j).getFlightCode()) < 0) {
+                flightList.set(k, leftArr.get(i));
                 i++;
             } else {
-                flightList.set(k, rArr.get(j));
+                flightList.set(k, rightArr.get(j));
                 j++;
             }
 
@@ -134,13 +112,13 @@ public class FlightManagementService {
         }
 
         while (i < n1) {
-            flightList.set(k, lArr.get(i));
+            flightList.set(k, leftArr.get(i));
             i++;
             k++;
         }
 
         while (j < n2) {
-            flightList.set(k, rArr.get(j));
+            flightList.set(k, rightArr.get(j));
             j++;
             k++;
         }

@@ -12,11 +12,13 @@ package truong.e1000.flightmanagement;
 
 import java.util.Scanner;
 
+import truong.e1000.flightmanagement.service.FlightManagementDisplayService;
 import truong.e1000.flightmanagement.service.FlightManagementService;
 
 public class FlightManagementApp {
     public static void main(String[] args) {
         FlightManagementService service = new FlightManagementService();
+        FlightManagementDisplayService display = new FlightManagementDisplayService();
         System.out.println("1. Days have the most flight: ");
         System.out.println("=========================================================");
         service.getDaysHasTheMostFlight();
@@ -26,6 +28,6 @@ public class FlightManagementApp {
         System.out.print("\tEnter Flight Code: ");
         Scanner sc = new Scanner(System.in);
         String flightCode = sc.next();
-        service.printFlight(service.getFlightByFlightCode(flightCode));
+        display.printFlight(service.getFlightByFlightCode(flightCode));
     }
 }

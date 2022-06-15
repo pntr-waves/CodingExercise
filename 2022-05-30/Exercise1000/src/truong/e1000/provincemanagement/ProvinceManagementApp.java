@@ -11,23 +11,25 @@
 package truong.e1000.provincemanagement;
 
 import truong.e1000.provincemanagement.service.ProvinceManageService;
+import truong.e1000.provincemanagement.service.ProvinceManagementDisplayService;
 
 public class ProvinceManagementApp {
     public static void main(String[] args) {
         ProvinceManageService service = new ProvinceManageService();
+        ProvinceManagementDisplayService display = new ProvinceManagementDisplayService();
         System.out.println("1. Total Area: " + service.getTotalArea());
         System.out.println("==========================================");
         
         System.out.println("\n2. Provinces have greatest area:");
         System.out.println("==========================================");
-        service.printProvinceList(service.getGreatestAreaProvinceList());
+        display.printProvinceList(service.getGreatestAreaProvinceList());
         
         System.out.println("\n3. Provinces have greatest population:");
         System.out.println("==========================================");
-        service.printProvinceList(service.getGreatestPopulationProvinceList());
+        display.printProvinceList(service.getGreatestPopulationProvinceList());
         
         System.out.println("\n4. Sort list of province by area with ascending");
         System.out.println("==========================================");
-        service.printProvinceList(service.sortProvinceByArea());
+        display.printProvinceList(service.sortProvinceByArea());
     }
 }

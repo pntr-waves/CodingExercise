@@ -7,16 +7,6 @@ import truong.e1000.ticketmanagement.data.TicketDataTestingBuilder;
 import truong.e1000.ticketmanagement.model.Ticket;
 
 public class TicketManagementService {
-    public void printTicketList(List<Ticket> ticketList) {
-        System.out.println("\n List of Ticket");
-        for (Ticket ticket : ticketList) {
-            System.out.println("-----------------------------------------");
-            System.out.println("Film Name: " + ticket.getFilmName());
-            System.out.println("Price: " + ticket.getPrice());
-            System.out.println("Show Time: " + ticket.getShowtime());
-            System.out.println("Show Date: " + ticket.getShowdate());
-        }
-    }
 
     public double getTotalPriceofListTicket() {
         List<Ticket> ticketList = TicketDataTestingBuilder.getTicketList();
@@ -50,33 +40,33 @@ public class TicketManagementService {
         int n1 = mid - left + 1;
         int n2 = right - mid;
 
-        List<Ticket> lArr = new ArrayList<>();
-        List<Ticket> rArr = new ArrayList<>();
+        List<Ticket> leftArr = new ArrayList<>();
+        List<Ticket> rightArr = new ArrayList<>();
 
         for (int i = 0; i < n1; i++) {
-            lArr.add(ticketList.get(left + i));
+            leftArr.add(ticketList.get(left + i));
         }
 
         for (int i = 0; i < n2; i++) {
-            rArr.add(ticketList.get(mid + i + 1));
+            rightArr.add(ticketList.get(mid + i + 1));
         }
 
         int i = 0, j = 0;
         int k = left;
 
         while (i < n1 && j < n2) {
-            if (lArr.get(i).getShowdate().compareTo(rArr.get(j).getShowdate()) < 0) {
-                ticketList.set(k, lArr.get(i));
+            if (leftArr.get(i).getShowdate().compareTo(rightArr.get(j).getShowdate()) < 0) {
+                ticketList.set(k, leftArr.get(i));
                 i++;
-            } else if (lArr.get(i).getShowdate().compareTo(rArr.get(j).getShowdate()) > 0) {
-                ticketList.set(k, rArr.get(j));
+            } else if (leftArr.get(i).getShowdate().compareTo(rightArr.get(j).getShowdate()) > 0) {
+                ticketList.set(k, rightArr.get(j));
                 j++;
             } else {
-                if (lArr.get(i).getShowtime().compareTo(rArr.get(j).getShowtime()) < 0) {
-                    ticketList.set(k, lArr.get(i));
+                if (leftArr.get(i).getShowtime().compareTo(rightArr.get(j).getShowtime()) < 0) {
+                    ticketList.set(k, leftArr.get(i));
                     i++;
                 } else {
-                    ticketList.set(k, rArr.get(j));
+                    ticketList.set(k, rightArr.get(j));
                     j++;
                 }
             }
@@ -85,13 +75,13 @@ public class TicketManagementService {
         }
 
         while (i < n1) {
-            ticketList.set(k, lArr.get(i));
+            ticketList.set(k, leftArr.get(i));
             i++;
             k++;
         }
 
         while (j < n2) {
-            ticketList.set(k, rArr.get(j));
+            ticketList.set(k, rightArr.get(j));
             j++;
             k++;
         }

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import truong.e1000.bookmanagement.data.DataTestingBuilder;
 import truong.e1000.bookmanagement.model.Book;
@@ -69,18 +68,7 @@ public class ManageBookService {
         
         return rs;
     }
-        
-    public void printBookList (List<Book> bookList) {
-        System.out.println("\nList of Book");
-        for (Book book : bookList) {
-            System.out.println("------------------------------------------------");
-            System.out.println(String.format("Book Name: %s", book.getBookName()));
-            System.out.println(String.format("Author Name: %s", book.getAuthorName()));
-            System.out.println(String.format("Publication Year: %d", book.getPublicationYear()));
 
-        }
-    }
-    
     void sortByPublicationYear (List<Book> bookList, int left, int right) {
         if (left < right) {
             int mid = (left + right) / 2;
@@ -96,15 +84,15 @@ public class ManageBookService {
         int n1 = mid - left + 1;
         int n2 = right - mid;
         
-        List<Book> lArr = new ArrayList<>();
-        List<Book> rArr = new ArrayList<>();
+        List<Book> leftArr = new ArrayList<>();
+        List<Book> rightArr = new ArrayList<>();
         
         for (int i = 0; i < n1; i++) {
-            lArr.add(bookList.get(left + i));
+            leftArr.add(bookList.get(left + i));
         }
         
         for (int i = 0; i < n2; i++) {
-            rArr.add(bookList.get(mid + 1 + i));
+            rightArr.add(bookList.get(mid + 1 + i));
         }
         
         int i, j;
@@ -112,11 +100,11 @@ public class ManageBookService {
         int k = left;
         
         while (i < n1 && j < n2) {
-            if (lArr.get(i).getPublicationYear() < rArr.get(j).getPublicationYear()) {
-                bookList.set(k, lArr.get(i));
+            if (leftArr.get(i).getPublicationYear() < rightArr.get(j).getPublicationYear()) {
+                bookList.set(k, leftArr.get(i));
                 i++;
             } else {
-                bookList.set(k, rArr.get(j));
+                bookList.set(k, rightArr.get(j));
                 j++;
             }
             
@@ -124,13 +112,13 @@ public class ManageBookService {
         }
         
         while (i < n1) {
-            bookList.set(k, lArr.get(i));
+            bookList.set(k, leftArr.get(i));
             i++;
             k++;
         }
         
         while (j < n2) {
-            bookList.set(j, rArr.get(j));
+            bookList.set(j, rightArr.get(j));
             j++;
             k++;
         }

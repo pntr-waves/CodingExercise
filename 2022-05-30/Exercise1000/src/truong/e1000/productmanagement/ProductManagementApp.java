@@ -8,14 +8,16 @@
  */
 package truong.e1000.productmanagement;
 
+import truong.e1000.productmanagement.service.ProductManagementDisplayService;
 import truong.e1000.productmanagement.service.ProductManagementService;
 
 public class ProductManagementApp {
     public static void main(String[] args) {
         ProductManagementService service = new ProductManagementService();
+        ProductManagementDisplayService display = new ProductManagementDisplayService();
         System.out.println("1. List of Product has the biggest amount");
         System.out.println("===================================================");
-        service.printProductList(service.getBiggestQuantityProductList());
+        display.printProductList(service.getBiggestQuantityProductList());
 
         System.out.println("\n2. The number of product has quantity greater than 1000");
         System.out.println("===================================================");
