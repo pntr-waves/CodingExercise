@@ -3,6 +3,9 @@
  * 847. Implement generate Doubly Linked List method
  * 845. Implement Doubly Linked List of Fraction
  * 846. Implement Doubly Linked List of Complex
+ * 849. Implement generate node method for Doubly Linked List 
+ * 850. Implement display all node of Doubly Linked List method
+ * 851. Implement display all node of Fraction Doubly Linked List method
  */
 package truong.e1000.doublylinkedlistmanagement;
 
