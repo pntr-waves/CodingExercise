@@ -1,20 +1,20 @@
 package truong.e1000.binarytree.model;
 
-public class Node<T> {
-    private T data;
-    public Node<T> left;
-    public Node<T> right;
+public class Node {
+    private int data;
+    public Node left;
+    public Node right;
 
-    public Node(T data) {
+    public Node(int data) {
         this.setData(data);
     }
 
-    public <T> T getData() {
-        return (T) data;
+    public int getData() {
+        return data;
     }
 
-    public <T> void setData(T data) {
-        this.data = (T) data;
+    public void setData(int data) {
+        this.data = data;
     }
 
 }
