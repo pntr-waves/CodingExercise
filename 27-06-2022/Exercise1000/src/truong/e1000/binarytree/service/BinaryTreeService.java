@@ -89,4 +89,35 @@ public class BinaryTreeService {
         
         return findData(root.right, data);
     }
+    
+    public Node deleteNode (BinaryTree tree, int data) {
+        return deleteNode(tree.root, data);
+    }
+    
+    private Node deleteNode (Node root, int data) {
+        if (root == null) {
+            return null;
+        }
+        
+        if (root.getData() < data) {
+            root.right = deleteNode(root.right, data);
+        } else if (root.getData() > data) {
+            root.left = deleteNode(root.left, data);
+        } else {
+            if (root.left == null || root.right == null) {
+                Node temp = root.left == null ? root.right : root.left;
+                return temp;
+            } else {
+                Node temp = root.right;
+                while (temp.left != null) {
+                    temp = temp.left;
+                }
+                root.setData(temp.getData());
+                root.right = deleteNode(root.right, temp.getData());
+                return root;
+            }
+        }
+        
+        return root;
+    }
 }

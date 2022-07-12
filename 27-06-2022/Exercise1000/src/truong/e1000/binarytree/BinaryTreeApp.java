@@ -25,24 +25,35 @@ public class BinaryTreeApp {
         System.out.println("Binary Tree: ");
         System.out.println("==============================================");
         display.print(tree);
-//        System.out.print("\nMax Data In Tree: ");
-//        System.out.println(service.getMaxData(tree));
-//        System.out.println("==============================================");
-//        System.out.print("\nCount Node has Data Greater Than 1500 In Tree: ");
-//        System.out.println(service.countData(tree, 1500));
-//        System.out.println("==============================================");
-//        System.out.print("\nTotal Data Less Than 2004 In Tree: ");
-//        System.out.println(service.getTotalData(tree, 2004));
-//        System.out.println("==============================================");
-//        int checkData = 2949;
-//        System.out.print("\nData Equal " + checkData +" In Tree: ");
-//        System.out.println(service.checkDataExist(tree, checkData) ? "Exist" : "Not Exist");
-//        System.out.println("==============================================");
-//        
+        
+        System.out.print("\nMax Data In Tree: ");
+        System.out.println(service.getMaxData(tree));
+        System.out.println("==============================================");
+        
+        System.out.print("\nCount Node has Data Greater Than 1500 In Tree: ");
+        System.out.println(service.countData(tree, 1500));
+        System.out.println("==============================================");
+        
+        System.out.print("\nTotal Data Less Than 2004 In Tree: ");
+        System.out.println(service.getTotalData(tree, 2004));
+        System.out.println("==============================================");
+        
+        int checkData = 2949;
+        System.out.print("\nData Equal " + checkData +" In Tree: ");
+        System.out.println(service.checkDataExist(tree, checkData) ? "Exist" : "Not Exist");
+        System.out.println("==============================================");
+
         int findData = 2641;
         System.out.print("\nData Equal " + findData +" In Tree: ");
         Node findNode = service.findData(tree, findData);
         System.out.println(findNode.toString() + String.format(" [%d]", findNode.getData()));
         System.out.println("==============================================");
+        
+        int deleteData = 2888;
+        System.out.print("\nData Equal " + deleteData +" In Tree: ");
+        service.deleteNode(tree, deleteData);
+        System.out.println("==============================================");
+        System.out.println("Binary Tree After Delete Node [2888]: ");
+        display.print(tree);
     }
 }
