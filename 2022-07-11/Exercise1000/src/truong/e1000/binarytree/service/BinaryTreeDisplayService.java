@@ -7,7 +7,7 @@ public class BinaryTreeDisplayService {
     public void print (Node root) {
         if (root != null) {
             print(root.left);
-            System.out.println(String.format("[%d]", root.getData()));
+            System.out.println("[" + root.getData() + "]");
             print(root.right);
         }
     }
@@ -20,7 +20,7 @@ public class BinaryTreeDisplayService {
         if (root != null) {
             printEvenNode(root.left);
             if (root.getData() % 2 == 0) {
-                System.out.println(String.format("[%d]", root.getData()));
+                System.out.println("[" + root.getData() + "]");
             }
             printEvenNode(root.right);
         }
@@ -30,7 +30,7 @@ public class BinaryTreeDisplayService {
         if (root != null) {
             printInXY(root.left, x, y);
             if (root.getData() > x && root.getData() < y) {
-                System.out.println(String.format("[%d]", root.getData()));
+                System.out.println("[" + root.getData() + "]");
             }
             printInXY(root.right, x, y);
         }
@@ -55,7 +55,7 @@ public class BinaryTreeDisplayService {
         if (root != null) {
             printPerfectNumberNode(root.left);
             if (checkPerfectNumber(root.getData())) {
-                System.out.println(String.format("[%d]", root.getData()));
+                System.out.println("[" + root.getData() + "]");
             }
             printPerfectNumberNode(root.right);
         }
@@ -67,7 +67,7 @@ public class BinaryTreeDisplayService {
             printNodeWithLevel(root.right, level, temp +  1);
             
             if (level == temp) {
-                System.out.println(String.format("[%d]", root.getData()));
+                System.out.println("[" + root.getData() + "]");
             }
         }
     }
